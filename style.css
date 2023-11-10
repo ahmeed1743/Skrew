@@ -37,7 +37,7 @@ input{
     text-transform: capitalize;
     letter-spacing: 2px;
 }
-.text {
+.names-inputs input{
     background: #38598b;
 }
 input[type="number"]{
