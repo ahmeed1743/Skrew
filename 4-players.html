@@ -8,63 +8,51 @@
     <title>Skrew || 4-Players</title>
 </head>
 <body>
-    <table>
-        <thead>
-            <tr class="names-inputs">
-                <td class="empty">rounds</td>
-                <td><input id="row1_col1" class="mmr"></td>
-                <td><input id="row1_col2"></td>
-                <td><input id="row1_col3"></td>
-                <td><input id="row1_col4"></td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="round">round 1</td>
-                <td><input type="number" id="row2_col1"></td>
-                <td><input type="number" id="row2_col2"></td>
-                <td><input type="number" id="row2_col3"></td>
-                <td><input type="number" id="row2_col4"></td>
-            </tr>
-            <tr>
-                <td class="round">round 2</td>
-                <td><input type="number" id="row3_col1"></td>
-                <td><input type="number" id="row3_col2"></td>
-                <td><input type="number" id="row3_col3"></td>
-                <td><input type="number" id="row3_col4"></td>
-            </tr>
-            <tr>
-                <td class="round">round 3</td>
-                <td><input type="number" id="row4_col1"></td>
-                <td><input type="number" id="row4_col2"></td>
-                <td><input type="number" id="row4_col3"></td>
-                <td><input type="number" id="row4_col4"></td>
-            </tr>
-            <tr>
-                <td class="round">round 4</td>
-                <td><input type="number" id="row5_col1"></td>
-                <td><input type="number" id="row5_col2"></td>
-                <td><input type="number" id="row5_col3"></td>
-                <td><input type="number" id="row5_col4"></td>
-            </tr>
-            <tr>
-                <td class="round">round 5</td>
-                <td><input type="number" id="row6_col1"></td>
-                <td><input type="number" id="row6_col2"></td>
-                <td><input type="number" id="row6_col3"></td>
-                <td><input type="number" id="row6_col4"></td>
-            </tr>
-            <tr>
-                <td class="total">Total</td>
-                <th id="score1" class="mnr"></th>
-                <th id="score2"></th>
-                <th id="score3"></th>
-                <th id="score4"></th>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table">
 
-<script>
+        <div><input class="text" id="row1_col1" class="mmr" placeholder="Name"></div>
+        <div><input class="text" id="row1_col2" placeholder="Name"></div>
+        <div><input class="text" id="row1_col3" placeholder="Name"></div>
+        <div><input class="text" id="row1_col4" placeholder="Name"></div>
+
+
+        <div><input type="number" id="row2_col1" placeholder="R1"></div>
+        <div><input type="number" id="row2_col2" placeholder="R1"></div>
+        <div><input type="number" id="row2_col3" placeholder="R1"></div>
+        <div><input type="number" id="row2_col4" placeholder="R1"></div>
+
+
+        <div><input type="number" id="row3_col1" placeholder="R2"></div>
+        <div><input type="number" id="row3_col2" placeholder="R2"></div>
+        <div><input type="number" id="row3_col3" placeholder="R2"></div>
+        <div><input type="number" id="row3_col4" placeholder="R2"></div>
+
+
+        <div><input type="number" id="row4_col1" placeholder="R3"></div>
+        <div><input type="number" id="row4_col2" placeholder="R3"></div>
+        <div><input type="number" id="row4_col3" placeholder="R3"></div>
+        <div><input type="number" id="row4_col4" placeholder="R3"></div>
+
+
+        <div><input type="number" id="row5_col1" placeholder="R4"></div>
+        <div><input type="number" id="row5_col2" placeholder="R4"></div>
+        <div><input type="number" id="row5_col3" placeholder="R4"></div>
+        <div><input type="number" id="row5_col4" placeholder="R4"></div>
+
+        <div><input type="number" id="row6_col1" placeholder="R5"></div>
+        <div><input type="number" id="row6_col2" placeholder="R5"></div>
+        <div><input type="number" id="row6_col3" placeholder="R5"></div>
+        <div><input type="number" id="row6_col4" placeholder="R5"></div>
+
+
+
+        <div id="score1" class="mnr"></div>
+        <div id="score2"></div>
+        <div id="score3"></div>
+        <div id="score4"></div>
+
+    </div>
+    <script>
     function calculateSums() {
     const column1IDs = ['row6_col1', 'row5_col1', 'row4_col1', 'row3_col1', 'row2_col1'];
     const column2IDs = ['row6_col2', 'row5_col2', 'row4_col2', 'row3_col2', 'row2_col2'];
@@ -101,10 +89,10 @@
     const score2 = parseFloat(document.getElementById('score2').textContent);
     const score3 = parseFloat(document.getElementById('score3').textContent);
     const score4 = parseFloat(document.getElementById('score4').textContent);
-    const thScore1 = document.querySelector('th#score1');
-    const thScore2 = document.querySelector('th#score2');
-    const thScore3 = document.querySelector('th#score3');
-    const thScore4 = document.querySelector('th#score4');
+    const thScore1 = document.querySelector('#score1');
+    const thScore2 = document.querySelector('#score2');
+    const thScore3 = document.querySelector('#score3');
+    const thScore4 = document.querySelector('#score4');
     }
 
 function checkAndColorScore3() {
@@ -112,12 +100,12 @@ function checkAndColorScore3() {
     const score2 = parseFloat(document.getElementById('score2').textContent);
     const score3 = parseFloat(document.getElementById('score3').textContent);
     const score4 = parseFloat(document.getElementById('score4').textContent);
-    const thScore1 = document.querySelector('th#score1');
-    const thScore2 = document.querySelector('th#score2');
-    const thScore3 = document.querySelector('th#score3');
-    const thScore4 = document.querySelector('th#score4');
+    const thScore1 = document.querySelector('#score1');
+    const thScore2 = document.querySelector('#score2');
+    const thScore3 = document.querySelector('#score3');
+    const thScore4 = document.querySelector('#score4');
     const scores = [score1, score2, score3, score4];
-const thScores = [thScore1, thScore2, thScore3, thScore4];
+    const thScores = [thScore1, thScore2, thScore3, thScore4];
 
 const minScore = Math.min(...scores);
 const minScoreIndices = scores.reduce((indices, score, index) => {
@@ -129,7 +117,8 @@ for (let i = 0; i < scores.length; i++) {
 if (minScoreIndices.includes(i)) {
     thScores[i].style.backgroundColor = '#2ECC40';
     thScores[i].style.color = ''
-} else {
+}
+else {
     thScores[i].style.backgroundColor = 'orange';
     thScores[i].style.color = "#252525"
 }
@@ -174,6 +163,6 @@ textInputs.forEach(input => {
 numberInputs.forEach(input => {
     updateBackgroundColor(input);
 });
-</script>
+    </script>
 </body>
 </html>

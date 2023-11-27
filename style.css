@@ -5,43 +5,59 @@
     box-sizing: border-box;
     font-family: 'Cairo', sans-serif;
 }
-table{
-    position: relative;
-}
 body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
-    background-color: #252525;
-    color: #fff;
-}
-input{
     width: 100%;
-    border: none;
+    background: #252525;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+.table{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 10px;
+    height: 100%;
+    padding: 20px;
+}
+
+.table input{
     outline: none;
     text-align: center;
-    border-bottom: 2px solid rgba(0,0,0,0.1);
-    padding: 16px;
-    font-weight: bolder;
-    font-size: 19px;
-    letter-spacing: 1px;
-    text-transform: capitalize;
-    color:#fff
-}
-.empty{
-    background: orange;
-    text-align: center;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 20px;
     font-weight: bold;
-    color: #212121;
-    text-transform: capitalize;
     letter-spacing: 2px;
+    text-transform: capitalize;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 0.5s ease;
+    color: #fff;
+    border-radius: 10px 10px 0 0 ;
 }
-.names-inputs input{
-    background: #38598b;
+.table input:hover{
+    border-bottom: 1px solid #4F709C;
 }
-input[type="number"]{
-    background: #a2a8d3;
+.table div{
+    position: relative;
+    transition: 0.5s ease;
+    border-radius: 10px 10px 0 0 ;
+}
+.table div:hover::after {
+    background: #4F709C;
+}
+.table div::after{
+    position: absolute;
+    content: "";
+    background:rgba(255,255,255,0.3);
+    width: 80%;
+    height: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4px;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -49,34 +65,46 @@ input[type="number"]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0;
 }
-
-.round{
-    background: #113f67;
-    color:#fff;
-    text-align: center;
-    padding: 16px;
-    text-transform: capitalize;
-    font-weight: bold;
-    position: relative;
-    overflow: hidden;
+input[type="number"]{
+    background: transparent;
+}
+input[type="number"]::placeholder{
+    color: rgba(255,255,255,0.1);
+}
+.text{
+    background: transparent;
+}
+.text::placeholder{
+    color: #999;
 }
 
-.total {
-    background-color: orange;
-    text-align: center;
-    letter-spacing: 1px;
-    padding: 10px;
-    color: #252525;
-    text-transform: uppercase;
+
+#score1,
+#score2,
+#score3,
+#score4,
+#score5,
+#score6,
+#score7,
+#score8 {
+    display: grid;
+    place-items: center;
     font-weight: bold;
-    letter-spacing: 2px;
+    font-size: 18px;
 }
 
-@media (max-width : 768px) {
-    .round,input{
+@media ( max-width : 768px) {
+    body{
         padding: 5px;
     }
-    input[type="text"]{
+    .table{
+        padding: 10px;
+    }
+    #special{
         font-size: 16px;
+        padding: 4px;
+    }
+    .table input{
+        font-size: 15px;
     }
 }
