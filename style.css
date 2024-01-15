@@ -91,6 +91,9 @@ input[type="number"]::placeholder{
     place-items: center;
     font-weight: bold;
     font-size: 18px;
+    /* background: url(images/crown.png); */
+    background-repeat: no-repeat;
+    background-position: 95% 5px;
 }
 
 @media ( max-width : 768px) {

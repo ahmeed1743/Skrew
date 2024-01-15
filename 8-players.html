@@ -185,13 +185,26 @@ if (score === minScore) indices.push(index);
 return indices;
 }, []);
 
+const maxScore = Math.max(...scores);
+const maxScoreIndices = scores.reduce((indices, score, index) => {
+if (score === maxScore) indices.push(index);
+return indices;
+}, []);
+
+
 for (let i = 0; i < scores.length; i++) {
 if (minScoreIndices.includes(i)) {
     thScores[i].style.backgroundColor = '#2ECC40';
-    thScores[i].style.color = ''
+    thScores[i].style.backgroundImage = `url(images/crown.png)`;
+    thScores[i].style.color = '#FFF'
+} else if(maxScoreIndices.includes(i)){
+    thScores[i].style.backgroundColor = '#D32F2F';
+    thScores[i].style.backgroundImage = `url(images/cone.png)`;
+    thScores[i].style.color = '#FFF'
 } else {
     thScores[i].style.backgroundColor = 'orange';
-    thScores[i].style.color = "#252525"
+    thScores[i].style.color = "#FFF"
+    thScores[i].style.backgroundImage = "none";
 }
 }
 }
